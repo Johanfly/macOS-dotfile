@@ -1,0 +1,30 @@
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="gentoo"
+
+plugins=(
+fast-syntax-highlighting
+#zsh-syntax-highlighting
+zsh-autosuggestions
+)
+
+source $ZSH/oh-my-zsh.sh
+setopt hist_ignore_dups 
+setopt append_history
+HISTIGNORE='&:clear:ls:cd:[bf]g:exit:[ t\]*'
+PROMPT_EOL_MARK=""
+
+alias delhis='cat /dev/null > ~/.*_history'
+alias delhost='cat /dev/null > ~/.ssh/known_*'
+alias delcode='rm -rf ~/Library/Application\ Support/Code'
+alias delgoogle='rm -rf ~/Library/Application\ Support/Google && rm -rf ~/Library/Google'
+alias dscleanup="find . -type f -name '*.DS_Store' -ls -delete"
+alias adcleanup="find . -type d -name '.AppleD*' -ls -exec /bin/rm -r {} \;"
+alias delimg='exiftool -all='
+alias checktor='curl --socks5 localhost:9150 --socks5-hostname localhost:9150 -s https://check.torproject.org/ | cat | grep -m 1 Congratulations | xargs'
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash/*; sudo rm -rfv /private/var/log/asl/*.asl"
+alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+alias rvmi="rvm --with-openssl-dir=$(brew --prefix openssl@1.1)"
+alias zipds="zip -x *.DS_Store -x *__MACOSX* -x *.AppleDouble*"
+alias glances="glances --disable-bold"
+fastfetch --config ~/.config/fastfetch/config.json --logo "DarkOS"
