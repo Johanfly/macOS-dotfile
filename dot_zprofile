@@ -27,9 +27,6 @@ export PATH="$PATH:/opt/metasploit-framework/bin"
 export PATH="$PATH:/Users/$USER/.local/bin"
 export PATH="$PATH:/Users/$USER/.go/bin"
 
-#ruby
-export PATH="$PATH:/Users/$USER/.rvm/gems/ruby-3.2.2/bin"
-
 #java
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
